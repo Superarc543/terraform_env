@@ -1,10 +1,10 @@
 variable "aws_access_key" {
-  default     = "AKIAXYZXMO6XACGST2FX"
+  default     = ""
   description = "AWS access_key"
 }
 
 variable "aws_secret_key" {
-  default     = "s/8EKKJ8G3rQDc1tzPGBpcLoKgzxY8jm2Ndayc/Z"
+  default     = ""
   description = "AWS secret_key"
 }
 
