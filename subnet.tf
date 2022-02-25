@@ -6,9 +6,9 @@ resource "aws_subnet" "a1" {
 
   tags = {
     Name      = "a1-10.1.1.0/24"
-    AZ        = "ap-southeast-a1"
+    AZ        = var.region
     IP_Ranger = "10.1.1.0/24"
-    VPC       = "production-10.1.0.0/16"
+    VPC       = aws_vpc.production.cidr_block
   }
 }
 ## AZ二區
@@ -19,9 +19,9 @@ resource "aws_subnet" "b2" {
 
   tags = {
     Name      = "b2-10.1.2.0/24"
-    AZ        = "ap-southeast-1b"
+    AZ        = var.region
     IP_Ranger = "10.1.2.0/24"
-    VPC       = "production-10.1.0.0/16"
+    VPC       = aws_vpc.production.cidr_block
   }
 }
 ## AZ三區
@@ -32,8 +32,8 @@ resource "aws_subnet" "c3" {
 
   tags = {
     Name      = "c3-10.1.3.0/24"
-    AZ        = "ap-southeast-1c"
+    AZ        = var.region
     IP_Ranger = "10.1.3.0/24"
-    VPC       = "production-10.1.0.0/16"
+    VPC       = aws_vpc.production.cidr_block
   }
 }
