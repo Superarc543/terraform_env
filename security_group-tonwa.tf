@@ -19,5 +19,6 @@ resource "aws_security_group" "sg-tonwa" {
   }
   tags = {
     Name = "sg-tonwa"
+    description = "OA,IDC"
   }
 }

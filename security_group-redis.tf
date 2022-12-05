@@ -11,6 +11,27 @@ resource "aws_security_group" "sg-redis" {
     protocol    = "tcp"
     cidr_blocks = ["10.1.0.0/16"]
   }
+  ingress {
+    description = "Allow-VPC-6479"
+    from_port   = 6479
+    to_port     = 6479
+    protocol    = "tcp"
+    cidr_blocks = ["10.1.0.0/16"]
+  }
+  ingress {
+    description = "Allow-VPC-6579"
+    from_port   = 6579
+    to_port     = 6579
+    protocol    = "tcp"
+    cidr_blocks = ["10.1.0.0/16"]
+  }
+  ingress {
+    description = "Allow-VPC-6679"
+    from_port   = 6679
+    to_port     = 6679
+    protocol    = "tcp"
+    cidr_blocks = ["10.1.0.0/16"]
+  }
   egress {
     from_port   = 0
     to_port     = 0
@@ -19,5 +40,6 @@ resource "aws_security_group" "sg-redis" {
   }
   tags = {
     Name = "sg-redis"
+    Redis_Port = "6379,6479,6579,6679"
   }
 }
